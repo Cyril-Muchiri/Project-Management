@@ -1,0 +1,464 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color:#dce5fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.main{
+    display: grid;
+    width: 90vw;
+    height: 90vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:"addProject projectList projectList"
+                        "addProject  projectList projectList"
+                        "sideBar  projectList projectList";
+    gap:1vw;
+    
+}
+.main h1{
+    margin-left: 4vw;
+    color: #01081e;
+    text-decoration: underline;
+}
+
+.addProject{
+grid-area: addProject;
+color: white;
+margin-top: 3vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+/* border:2px solid blue; */
+
+}
+.sideBar{
+    grid-area: sideBar;
+    /* border: 2px solid yellow; */
+    display: flex;
+    flex-direction: column;
+
+}
+.projectList{
+    grid-area: projectList;
+    width: 60vw;
+    padding: 4vh 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+ /* Add Taks styles */
+
+.container {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+    box-shadow: 0 0 5px rgb(43, 53, 80,0.4);
+    padding:5vh 2vh;
+
+    /* border:2px solid blue; */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 25vw;
+    height: 5vh;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid rgb(128, 128, 128,0.4);
+    border-radius: 5px;
+    background-color: transparent;
+    color:#01081e;
+}
+.text-area{
+    width: 25vw;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid rgb(128, 128, 128,0.4);
+    border-radius: 5px;
+    background-color: transparent;
+    color:#01081e
+
+}
+
+.form-control input[type="date"]{
+    background-color: white;
+    cursor: pointer;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn-primary {
+    background-color: #2b3550;
+    width: 100%;
+    height: 6vh;
+    color: #dce5fe;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color:#c8d6fe;
+    border: 1px solid rgb(43, 53, 80);
+    color:  rgb(43, 53, 80);
+}
+
+/* side bar styles */
+.sideBar{
+    background-color: transparent;
+    box-shadow: 0 0 5px rgb(43, 53, 80,0.4);
+
+}
+.sideBar .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    gap: 1vh;
+    justify-content: space-evenly;
+
+    
+}
+.sideBarBtns{
+    width:15vw;
+    height: 7vh;
+    border: 1px solid rgb(94, 92, 92);
+    border-radius: 1vw;
+    color:#dce5fe;
+    font-size: 18px;
+    background-color: #2b3550;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease, border-color 0.3s ease;}
+.sideBarBtns:hover{
+    background-color:#c8d6fe;
+    border: 1px solid rgb(43, 53, 80);
+    color:  rgb(43, 53, 80);
+
+}
+
+.projectContainer {
+    width: 25vw;
+    padding: 3vh 2vw;
+    height: 20vh;
+    border: 1px solid rgba(43, 53, 80, 0.2);
+    background-color: #c8d6fe;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1vh 1vh;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Add this to hide the pseudo-element overflow */
+}
+
+/* styles when task is asigned */
+.asigned{
+    width: 25vw;
+    padding: 3vh 2vw;
+    height: 20vh;
+    border: 1px solid rgba(43, 53, 80, 0.2);
+    background-color: #c8d6fe;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1vh 1vh;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; 
+    pointer-events: none; /* Disable pointer events so the container cannot be clicked */
+    opacity: 0.7; /* Change the opacity to visually indicate that it's disabled */
+    filter: grayscale(40%); /* Add this to hide the pseudo-element overflow */
+}
+
+.projectContainer::before {
+    content: '';
+    position: absolute;
+    background-color:transparent; /* Default color for the folding part */
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 5px;
+    box-shadow: 1px 1px 2px 0px #22146E;
+    transition: 1s;
+}
+
+.projectContainer:hover::before {
+    width: 30px;
+    height: 30px;
+    left: -2px;
+    top: -3px;
+    background-color: rgb(43, 53, 80);
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 30%);}
+
+
+
+ .name{
+    font-weight: bold;
+    font-size: 18px;
+ }
+ .desc{
+    border: 1px solid rgb(43, 53, 80);
+    width: 25vw;
+    height: 20vh;
+    border-radius: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+
+ }
+
+ .actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .action-btn{
+    width: 8vw;
+    height: 6vh;
+    border-radius: 5px;
+    color:#dce5fe;
+    font-size: 18px;
+    background-color: #2b3550;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease, border-color 0.3s ease;
+}
+
+
+.action-btn:hover{
+    background-color:#c8d6fe;
+    border: 1px solid rgb(43, 53, 80);
+    color:  rgb(43, 53, 80);
+
+    
+}
+
+.action-btn-delete{
+    width: 8vw;
+    height: 6vh;
+    border-radius: 5px;
+    color:#dce5fe;
+    font-size: 18px;
+    background-color: #2b3550;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+.action-btn-delete:hover{
+    background-color:#c8d6fe;
+    border: 1px solid red;
+    color: red;
+
+}
+
+.action-btn-update{
+    width: 8vw;
+    height: 6vh;
+    border-radius: 5px;
+    color:#dce5fe;
+    font-size: 18px;
+    background-color: #2b3550;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+.action-btn-update:hover{
+    background-color:#c8d6fe;
+    border: 1px solid green;
+    color:green;
+
+}
+.alerts{
+    margin-top: 2vh;
+    border: 1px solid rgb(43, 53, 80);
+    padding: 10px;
+    border-radius: 10px;
+    width: 25vw;
+    color: #01081e;
+    text-align: center;
+    font-size: 20px;
+    background-color: #c8d6fe;
+}
+
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+    
+  */
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 412px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        align-items: center;
+        height: auto;
+    }
+
+    .main{
+        margin-top: 30vh;
+        display: grid;
+        width: 90vw;
+        height: 90vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:"sideBar"
+                            "addProject"
+                            "addProject"
+                            "projectList"
+                            "projectList"
+                            "projectList"
+                            ;
+        gap:1vw;
+        
+    }
+    .main h1 {
+        width : 90vw;
+        font-size: 20px;
+    }
+    .alerts{
+        width: 90vw;
+    }
+    .addProject{
+        margin-top: 30px;
+        width:90vw;
+
+    }
+    .container{
+        width: 80vw;
+    }
+    .form-control{
+        width: 95%;
+        height: 3vh;
+    }
+    .text-area{
+        width: 95%;
+
+    }
+
+
+    .menu{
+        display: flex;
+    
+    }
+    .projectList{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90vw;
+        margin-top: 40vh;
+        gap:2vh;
+
+    }
+    .projectContainer{
+        width: 80%;
+    }
+    .asigned{
+        width: 80%;
+    }
+    .desc{
+        width: 80%;
+    }
+    .action-btn{
+        width: 30vw;
+        height: 6vh;
+        border-radius: 5px;
+        color:#dce5fe;
+        font-size: 18px;
+        background-color: #2b3550;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.5s ease, border-color 0.3s ease;
+    }
+    
+    
+    .action-btn:hover{
+        background-color:#c8d6fe;
+        border: 1px solid rgb(43, 53, 80);
+        color:  rgb(43, 53, 80);
+    
+        
+    }
+    
+    .action-btn-delete{
+        width: 30vw;
+        height: 6vh;
+        border-radius: 5px;
+        color:#dce5fe;
+        font-size: 18px;
+        background-color: #2b3550;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .action-btn-delete:hover{
+        background-color:#c8d6fe;
+        border: 1px solid red;
+        color: red;
+    
+    }
+    
+    .action-btn-update{
+        width: 30vw;
+        height: 6vh;
+        border-radius: 5px;
+        color:#dce5fe;
+        font-size: 18px;
+        background-color: #2b3550;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .action-btn-update:hover{
+        background-color:#c8d6fe;
+        border: 1px solid green;
+        color:green;
+    
+    }
+
+    
+}

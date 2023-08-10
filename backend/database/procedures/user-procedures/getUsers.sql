@@ -1,0 +1,7 @@
+CREATE PROCEDURE getUsers
+
+AS BEGIN
+
+SELECT * FROM userTable
+
+END;

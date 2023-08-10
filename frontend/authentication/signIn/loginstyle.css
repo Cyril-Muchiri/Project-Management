@@ -1,0 +1,168 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.app{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DCE5FE;
+    min-width: 500px;
+}
+
+
+.main{
+    /* border-style: solid; */
+    width: 60vw;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+height: 70vh;
+/* min-width: 600px; */
+
+}
+
+.loginDiv{
+    border-style:hidden;
+    width: 30vw;
+    border-radius: 10px;
+    border-width: 3px;
+    box-shadow: 0 0 20px rgba(0,0 ,0 ,2 );
+    min-width: 600px;
+
+    
+}
+.loginDiv >div{
+    /* margin-left: 10px; */
+    padding-left: 15px;
+    min-width: 600px;
+}
+
+.mainloginForm{
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+    min-width: 600px;
+    margin-left: 2vw;
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    min-width: 600px;
+    /* gap: 0px; */
+}
+.userName{
+    font-size: 19px;
+    height: 6vh;
+    border-radius: 12px;
+    width: 85%;
+    padding: 0vh 2vw;
+    background-color: #DCE5FE;
+/* min-width: 300px; */
+}
+.userPass{
+    font-size: 19px;
+    /* border-style: none; */
+    height: 6vh;
+    border-radius: 12px;
+    width: 85%;
+    background-color: #DCE5FE;
+    padding: 0vh 2vw;
+    /* min-width: 300px; */
+}
+
+.formFooter{
+    /* border-style: solid; */
+    display: flex;
+    justify-content: space-around;min-width: 600px;
+}
+.submitBtn{
+    display: flex;
+    justify-content: center;
+    /* min-width: 300px; */
+}
+button{
+    height: 5vh;
+    width: 85%;
+    background-color: #2B3550;
+    color: white;
+    border-radius: 10px;
+    /* min-width: 100px; */
+}
+.mainFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 600px;
+}
+.regLink{
+    display: flex;
+    justify-content: center;min-width: 600px;
+}
+.engDiv{
+    display: flex;
+    /* border-style: solid; */
+    /* width: 50%; */
+    justify-content: space;
+    min-width: 600px;
+    
+}
+
+.engDiv img{
+    height: 100%;
+    width: 30vw;
+}
+
+.btn-primary {
+    background-color: #2b3550;
+    width: 90%;
+    height: 6vh;
+    color: #dce5fe;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.5s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color:#c8d6fe;
+    border: 1px solid rgb(43, 53, 80);
+    color:  rgb(43, 53, 80);
+}
+
+@media(max-width:1200px){
+    .engDiv{
+        display: none;
+    }
+}
+
+@media (max-width:1200px){
+    .submitBtn{
+        width: 100px;
+    }
+}
+@media(max-width:700px){
+   body{
+    background-color:#DCE5FE;
+   }
+   .main{
+    max-width: 100%;
+    margin: 1;
+    height: 100%;
+   }
+   .app{
+    width: 100%;
+    margin: 1;
+     overflow-x: hidden;
+   }
+  
+}
+

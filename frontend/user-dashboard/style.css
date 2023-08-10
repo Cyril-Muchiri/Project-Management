@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#dce5fe;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #dce5fe;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.main{
+    width: 90vw;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:"profile projectDesc"
+                        "profile projectDesc";
+}
+.main h1{
+    margin: 2vw;
+    color: #01081e;
+    font-size: 30px;
+}
+.alerts{
+    border: 1px solid rgb(43, 53, 80);
+    padding: 20px;
+    border-radius: 10px;
+    width: 25vw;
+    color: #01081e;
+    text-align: center;
+    font-size: 20px;
+    background-color: #c8d6fe;
+    margin-top: 2vh;
+}
+
+
+.profile{
+    grid-area: profile;
+    /* border: 2px solid red; */
+    width: 30vw;
+    gap: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.profileDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+.profilePic{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-top: 3vh;
+}
+.profileDesc{
+    color: #2b3550 ;
+    width: 25vw;
+    height: fit-content;
+    border: 2px solid  rgb(43, 53, 80,0.3);
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vh;
+    padding: 2vh;
+    flex-wrap: wrap;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+
+.projectDesc{
+    grid-area: projectDesc;
+    /* border: 2px solid black; */
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    background: #DCE5FE;
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgba(10, 10, 10, 0.3),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border-radius:10px ;
+}
+
+
+.modalContainer{
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    z-index: 99999;
+    right: 0;
+    top: 0;
+    width: 55vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+  }
+  .modal-content{
+    width: 30vw;
+    height: 40vh;
+    margin-top: 2vh;
+    background-color: #c8d6fe;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+  }
+  .modal-content form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap:5vh;
+    padding: 1vh 2vw;
+    
+  }
+  .form-control {
+    width: 25vw;
+    height: 5vh;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid rgb(128, 128, 128,0.4);
+    border-radius: 5px;
+    background-color: transparent;
+    color:#01081e;
+}
+.text-area{
+    width: 25vw;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid rgb(128, 128, 128,0.4);
+    border-radius: 5px;
+    background-color: transparent;
+    color:#01081e
+
+}
+
+
+.projectContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2b3550 ;
+    margin-top: 5vh;
+    width: 40vw;
+    padding: 3vh 2vw;
+    height: 25vh;
+    overflow-y: scroll;
+    overflow-x:none;
+    border: 1px solid rgba(43, 53, 80, 0.2);
+    background-color: #c8d6fe;
+    border-radius: 10px;
+    display: flex;
+    font-size: 25px;
+    gap: 1vh 1vh; 
+}
+.projectContainer .name{
+    font-size: 30px;
+    font-weight: bold;
+    color: #01081e;
+}
+
+.tasks{
+    color: #01081e;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 10vh;
+}
+.tasks h1{
+    color: #01081e;
+    font-size: 30px;
+}
+.task{
+    display: flex;
+    gap: 3vw;
+}
+input[type="checkbox"]{
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2b3550;
+    width: 100%;
+    height: 6vh;
+    color: #dce5fe;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.5s ease, border-color 0.3s ease;
+}
+.btn-disabled {
+    background-color: #2b3550;
+    width: 100%;
+    height: 6vh;
+    color: #dce5fe;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.5s ease, border-color 0.3s ease;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.btn-primary:hover {
+    background-color:#c8d6fe;
+    border: 1px solid rgb(43, 53, 80);
+    color:  rgb(43, 53, 80);
+}
+
+
+
+@media screen and (max-width: 412px) {
+    .main{
+        width: 90vw;
+        height: 90vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:"profile"
+                            "profile"
+                            "projectDesc"
+                            "projectDesc";
+    }
+    .main h1{
+        display: none;
+    }
+
+    .profile{
+        width: 90vw;
+        height: 40vh;
+        border: none;
+
+        
+    }
+    .alerts{
+        width: 75vw;
+        height: 20vh;
+        margin-top: 0vh;
+    }
+    .profileDetails{
+        flex-direction: row;
+        width: 90vw;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+    .profilePic{
+        width: 15vw;
+        height: 15vw;
+        margin-top: 2vh;
+    }
+    .profileDesc{
+        color: #2b3550 ;
+        height:40vh;
+        width: 90vw;
+        margin-bottom: 20vh;
+        font-size: 15px;
+        border: none;
+    }
+    .projectDesc{
+        border: none;
+    }
+
+    .project{
+        width: 75vw;
+        height: 30vh;
+        margin-top: 5vh;
+        padding: 2vh 2vw;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .projectDesc{
+        width: 90vw;
+        height: 50vh;
+    }
+
+    .tasks{
+        padding-bottom: 1vh;
+    }
+
+
+.modal {
+    width: 90vw;
+    height: 60vh;
+
+  }
+  .modal-content{
+    width: 80vw;
+    height: 40vh;
+  }
+  .text-area{
+    width: 70vw;
+  }
+  .form-control{
+    width: 70vw;
+  }
+ 
+
+
+}

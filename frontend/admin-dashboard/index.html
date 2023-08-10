@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-Management-Software</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&family=Outfit:wght@400;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <!-- Add Project section -->
+        <div class="addProject">
+            <h1>Project Manager Dashboard</h1>
+            <div class="alertContainer">
+
+            </div>
+            <div class="container">
+                <form class="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="project_name" placeholder="Project Title">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="text-area" id="project_description" placeholder="Description" rows="4"></textarea>
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="date" class="form-control" id="deadline" >
+                    </div> -->
+                    <button type="submit" id="addProject" class="btn-primary">Add Project</button>
+                </form>
+            </div>
+        </div>
+        <!-- side menu bar section -->
+        <!-- <div class="sideBar">
+                <ul class="menu">
+                    <li><button class="sideBarBtns" id="allUsers">Users</button></li>
+                    <li><button class="sideBarBtns" id="completed">Completed Projects</button></li>
+                    <li><button class="sideBarBtns" id="incompleted">Incompleted Projects</button></li>
+                </ul>
+            </div> -->
+        <div class="projectList">
+            
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
